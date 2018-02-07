@@ -21,17 +21,20 @@ import javax.validation.constraints.Size;
 @Data
 @NoArgsConstructor
 @Entity
-public class User {
+public class User{
 
 	@Id
 	@Email
 	@NotEmpty
 	@Column(unique = true)
 	private String email;
+
 	@NotEmpty
 	private String name;
+
 	@Size(min = 4)
 	private String password;
+
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Task> tasks;
 	
