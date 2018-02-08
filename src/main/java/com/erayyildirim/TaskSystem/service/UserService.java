@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.Email;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -39,7 +37,7 @@ public class UserService{
     }
 
     public User findOneUser(String email){
-        return  userRepository.findByEmailAddress(email);
+        return userRepository.findByEmail(email);
     }
 
 }
