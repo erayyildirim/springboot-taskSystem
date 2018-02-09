@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{fragments/main_layout}" >
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th>
     <title>Index Page</title>
+    <th:block th:include="fragments/header :: head"></th:block>
+
+
 </head>
 <body>
+        <div th:replace="fragments/header :: header">
 
-<div  layout:fragment="content" class="container mySpace">
-    <div class="jumbotron">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum maiores autem vel doloribus consequuntur harum commodi eos tenetur vitae asperiores!</p>
+        </div><p>sa</p></div>
 
-    </div>
-</div>
+
+
 </body>
+<div th:replace="fragments/footer :: footer">
 </html>

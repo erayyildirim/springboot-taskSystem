@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/materia/bootstrap.min.css}">
@@ -9,7 +9,7 @@
 <body>
     <div th:replace="fragments/header::header"></div>
 
-
+    <div layout:fragment="content"></div>
 
 
     <div th:replace="fragments/footer::footer"></div>
