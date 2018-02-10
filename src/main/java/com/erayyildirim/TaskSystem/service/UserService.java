@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +40,16 @@ public class UserService{
     }
 
     public User findOneUser(String email){
+
         return userRepository.findByEmail(email);
     }
 
+    public boolean isUserPresent(@Email @NotEmpty String email) {
+
+        User user=userRepository.findByEmail(email);
+        if(user != null){
+            return true;
+        }
+        return false;
+    }
 }
