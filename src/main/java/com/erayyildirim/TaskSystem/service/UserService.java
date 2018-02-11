@@ -52,4 +52,14 @@ public class UserService{
         }
         return false;
     }
+
+    public Iterable<User> findAll() {
+
+        return userRepository.findAll();
+    }
+
+    public Iterable<User> findByName(String name) {
+
+        return userRepository.findByNameLike("%"+ name +"%" );
+    }
 }

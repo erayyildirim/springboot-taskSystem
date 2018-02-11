@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th>
+    <title>Index Page</title>
+    <th:block th:include="fragments/header :: head"></th:block>
+
+
+</head>
+<body>
+<div th:replace="fragments/header :: header"> </div>
+
+<div class="container mySpace">
+
+    <form action="/users" class="form-inline my-2 my-lg-2">
+        <input class="form-control mr-sm-2" name="name" placeholder="Search User" type="text">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <div class="card border-secondary mb-3" >
+        <div class="card-header">User List</div>
+    <table class="table table-secondary">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Add</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-secondary" th:each="user:${users}">
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td><a th:href="@{/addTask(email=${user.email})}"  class="btn btn-primary">Add Task</a></td>
+            <!--<td><a th:href="@{'/addTask/' + ${user.email}}"  class="btn btn-primary">Add Task</a></td>-->
+
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+
+</html>

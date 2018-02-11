@@ -9,9 +9,10 @@
 <body>
 <div th:replace="fragments/header :: header"> </div>
 
-            <div class="jumbotron">
-                <p class="alert alert-succes">Registration success!</p>
-            </div>
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Registration success! You can sign in to continue.</strong>
+</div>
 <div th:replace="fragments/footer :: footer"></div>
 </body>
 

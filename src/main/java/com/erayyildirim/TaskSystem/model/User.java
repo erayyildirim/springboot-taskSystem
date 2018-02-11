@@ -24,8 +24,8 @@ import javax.validation.constraints.Size;
 public class User{
 
 	@Id
-	@Email
-	@NotEmpty
+	@Email	//Email için Email.(bulunduğu sınıf)User.(field adı)email
+	@NotEmpty //validasyondan sonra kendi mesajımızı vermek için messages.properties olusturuldu
 	@Column(unique = true)
 	private String email;
 
