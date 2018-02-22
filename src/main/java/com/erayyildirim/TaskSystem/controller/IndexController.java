@@ -11,4 +11,9 @@ public class IndexController {
     public String showIndex(){
         return "index";
     }
+
+    @GetMapping("/login")
+    public String getLogin(){
+        return "views/loginForm";
+    }
 }

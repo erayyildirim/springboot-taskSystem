@@ -1,13 +1,11 @@
 package com.erayyildirim.TaskSystem.service;
 
-import com.erayyildirim.TaskSystem.model.Role;
 import com.erayyildirim.TaskSystem.model.User;
 import com.erayyildirim.TaskSystem.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
@@ -24,18 +22,15 @@ public class UserService{
     public void createUser(User user){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         user.setPassword(encoder.encode(user.getPassword()));
-        Role userRole = new Role("USER");
-        List<Role> roles = new ArrayList<>();
-        roles.add(userRole);
+        user.setRoles("USER");
         userRepository.save(user);
+
     }
 
     public void createAdmin(User user){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         user.setPassword(encoder.encode(user.getPassword()));
-        Role userRole = new Role("ADMIN");
-        List<Role> roles = new ArrayList<>();
-        roles.add(userRole);
+        user.setRoles("ADMIN");
         userRepository.save(user);
     }
 

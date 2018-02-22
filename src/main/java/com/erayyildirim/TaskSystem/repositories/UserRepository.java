@@ -14,6 +14,7 @@ public interface UserRepository  extends CrudRepository<User, String> {
 
 	List<User> findByNameLike(String name);
 
+
 	@Query("select u from User u where u.email =:email")
 	User findByEmail(@Param("email") String email);
 

@@ -38,11 +38,9 @@ public class User{
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Task> tasks;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "USER_ROLES", joinColumns={
-			@JoinColumn(name = "USER_EMAIL", referencedColumnName = "email") }, inverseJoinColumns = {
-					@JoinColumn(name = "ROLE_NAME", referencedColumnName = "name") })
-	private List<Role> roles;
+
+	//private List<String> roles;
+	private String roles;
 
 
 
